@@ -3,10 +3,10 @@ package model;
 import enums.Genero;
 
 public abstract class Midias {
-    private String titulo;
-    private String artista;
-    private Double duracao;
-    private Genero genero;
+    protected String titulo;
+    protected String artista;
+    protected Double duracao;
+    protected Genero genero;
 
     public Midias(String titulo, String artista, Double duracao, Genero genero) {
         this.titulo = titulo;
@@ -14,4 +14,10 @@ public abstract class Midias {
         this.duracao = duracao;
         this.genero = genero;
     }
+
+    public void exibirInfo() {
+        System.out.println(titulo + " - " + artista + " | " + "\n" + duracao + " " + genero);
+    }
+
+    public abstract void reproduzir();
 }
