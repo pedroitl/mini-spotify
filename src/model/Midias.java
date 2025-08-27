@@ -15,7 +15,21 @@ public abstract class Midias {
         this.genero = genero;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public String getArtista() {
+        return artista;
+    }
+
+    public Integer getDuracao() {
+        return duracao;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
 
     public void exibirInfo() {
         System.out.println(titulo + " - " + artista + " | " + "\n" + duracao + " " + genero);
