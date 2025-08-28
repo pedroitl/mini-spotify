@@ -1,4 +1,4 @@
-public class Programa {
+public class Sistema {
     public static void main(String[] args) {
 
     }
