@@ -11,7 +11,7 @@ import exceptions.OpcaoInvalidaException;
 import model.*;
 
 public class Catalogo {
-private ArrayList<Midias> midias = new ArrayList();
+private ArrayList<Midia> midias = new ArrayList();
 	
 	public void buscarMidia(Scanner scanner) throws ListaVaziaException, EntradaVaziaException {
 		if(midias.size()==0) {
@@ -199,7 +199,7 @@ private ArrayList<Midias> midias = new ArrayList();
 	}
 	
 	public void exibirTodas() {
-		for ( Midias midia : midias) {
+		for ( Midia midia : midias) {
 			System.out.println(midia);
 		}
 	}

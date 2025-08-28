@@ -2,7 +2,7 @@ package model;
 
 import enums.Genero;
 
-public class Audiobook extends Midias{
+public class Audiobook extends Midia {
     public Audiobook(String titulo, String artista, Integer duracao, Genero genero) {
         super(titulo, artista, duracao, genero);
     }
