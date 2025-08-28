@@ -1,4 +1,69 @@
 package model;
 
+import exceptions.ListaVaziaException;
+import exceptions.OpcaoInvalidaException;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Playlist {
+    private String nome;
+    private Usuarios dono;
+    private List<Midia> midias;
+
+    public Playlist(String nome, Usuarios dono) {
+        if (nome == null || nome.isBlank()) {
+            throw new IllegalArgumentException("Nome da playlist não pode ser nulo ou vazio!");
+        }
+        if (dono == null) {
+            throw new IllegalArgumentException("A playlist precisa de um dono!");
+        }
+
+        this.nome = nome;
+        this.dono = dono;
+        this.midias = new ArrayList<>();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Usuarios getDono() {
+        return dono;
+    }
+
+    public List<Midia> getMidias() {
+        return new ArrayList<>(midias);
+    }
+
+    public void adicionarMidia(Midia midia) {
+        midias.add(midia);
+        System.out.println("Mídia adicionada: " + midia.getTitulo());
+    }
+
+    public void removerMidia(String titulo) throws OpcaoInvalidaException {
+        boolean removida = midias.removeIf(m -> m.getTitulo().equalsIgnoreCase(titulo));
+        if (!removida) {
+            throw new OpcaoInvalidaException("Mídia não encontrada: " + titulo);
+        }
+        System.out.println("Mídia removida: " + titulo);
+    }
+
+    public void visualizarMidias() throws ListaVaziaException {
+        System.out.println("\nPlaylist: " + nome + " | Dono: " + dono.getNome());
+        if (midias.isEmpty()) {
+            throw new ListaVaziaException("A playlist está vazia.");
+        }
+        for (Midia m : midias) {
+            System.out.println("- " + m);
+        }
+    }
+
+    public int duracaoTotal() {
+        int total = 0;
+        for (Midia m : midias) {
+            total += m.getDuracao();
+        }
+        return total;
+    }
 }
