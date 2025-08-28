@@ -31,8 +31,9 @@ public abstract class Midia {
         return duracao;
     }
 
-    public void exibirInfo() {
-        System.out.println(titulo +" - " +artista+" | " + "\n" + duracao + " " + genero);
+    @Override
+    public String toString() {
+        return titulo +" - " +artista+" | " + "\n" + duracao + " " + genero;
     }
 
     public abstract void reproduzir();
