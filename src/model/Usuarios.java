@@ -1,6 +1,8 @@
 package model;
 
 
+import exceptions.EntradaVaziaException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +11,12 @@ public class Usuarios {
     private String email;
     private List<Playlist> playlists;
 
-    public Usuarios(String nome, String email) {
+    public Usuarios(String nome, String email) throws EntradaVaziaException{
         if (nome == null || nome.isBlank()) {
-            throw new IllegalArgumentException("Nome nao pode ser vazio ou nulo!");
+            throw new EntradaVaziaException("Nome nao pode ser vazio ou nulo!");
         }
         if (email == null || email.isBlank()) {
-            throw new IllegalArgumentException("Nome nao pode ser vazio ou nulo!");
+            throw new EntradaVaziaException("Nome nao pode ser vazio ou nulo!");
         }
 
         this.nome = nome;
@@ -22,9 +24,9 @@ public class Usuarios {
         this.playlists = new ArrayList<>();
     }
 
-    public void criarPlaylist(String nomePlaylist) {
+    public void criarPlaylist(String nomePlaylist) throws EntradaVaziaException {
         if (nomePlaylist == null || nomePlaylist.isBlank()) {
-            throw new IllegalArgumentException("Nome da playlist não pode ser nulo ou vazio");
+            throw new EntradaVaziaException("Nome da playlist não pode ser nulo ou vazio");
         }
 
         for (Playlist p : playlists) {

@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.EntradaVaziaException;
 import exceptions.ListaVaziaException;
 import exceptions.OpcaoInvalidaException;
 
@@ -11,12 +12,12 @@ public class Playlist {
     private Usuarios dono;
     private List<Midia> midias;
 
-    public Playlist(String nome, Usuarios dono) {
+    public Playlist(String nome, Usuarios dono) throws EntradaVaziaException {
         if (nome == null || nome.isBlank()) {
-            throw new IllegalArgumentException("Nome da playlist não pode ser nulo ou vazio!");
+            throw new EntradaVaziaException("Nome da playlist não pode ser nulo ou vazio!");
         }
         if (dono == null) {
-            throw new IllegalArgumentException("A playlist precisa de um dono!");
+            throw new EntradaVaziaException("A playlist precisa de um dono!");
         }
 
         this.nome = nome;
