@@ -1,5 +1,7 @@
-import model.Usuarios;
-import service.Catalogo;
+package main.java.model;
+
+import main.java.exceptions.EntradaVaziaException;
+import main.java.service.Catalogo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +16,15 @@ public class Sistema {
         this.catalogo = new Catalogo();
     }
 
-    public void cadastrarUsuario(String nome, String email) {
+    public void cadastrarUsuario(String nome, String email) throws EntradaVaziaException {
         Usuarios usuario = new Usuarios(nome, email);
         usuarios.add(usuario);
         System.out.println("Usuário cadastrado com sucesso: " + nome);
     }
 
     public void iniciar() {
-        System.out.println("Sistema iniciado!");
+        System.out.println("main.java.model.Sistema iniciado!");
         System.out.println("Número de usuários cadastrados: " + usuarios.size());
-        System.out.println("Quantidade de mídias no catálogo: " + catalogo.getQtdMidias());
     }
 
     public List<Usuarios> getUsuarios() {

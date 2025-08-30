@@ -1,17 +1,18 @@
-package service;
+package main.java.service;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import enums.Genero;
-import exceptions.EntradaVaziaException;
-import exceptions.ListaVaziaException;
-import exceptions.OpcaoInvalidaException;
-import model.*;
+import main.java.enums.Genero;
+import main.java.exceptions.EntradaVaziaException;
+import main.java.exceptions.ListaVaziaException;
+import main.java.exceptions.OpcaoInvalidaException;
+import main.java.model.*;
 
 public class Catalogo {
 private ArrayList<Midia> midias = new ArrayList();
+private Sistema sistema;
 	
 	public Midia buscarMidia(Scanner scanner) throws ListaVaziaException, EntradaVaziaException, OpcaoInvalidaException {
 		Midia midia = null;
@@ -269,6 +270,16 @@ private ArrayList<Midia> midias = new ArrayList();
 			System.out.println(midia);
 		}
 	}
-	
+
+	public void newUser(String nome, String email) throws EntradaVaziaException {
+		Sistema sistema = new Sistema();
+		sistema.cadastrarUsuario(nome, email);
+		System.out.println("Usuário cadastrado com sucesso: " + nome);
+	}
+
+	public void iniciar() {
+		Sistema sistema = new Sistema();
+		sistema.iniciar();
+	}
 	
 }

@@ -1,6 +1,6 @@
-package model;
+package main.java.model;
 
-import enums.Genero;
+import main.java.enums.Genero;
 
 public abstract class Midia {
     protected String titulo;

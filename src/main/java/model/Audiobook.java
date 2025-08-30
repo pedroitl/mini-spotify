@@ -1,6 +1,6 @@
-package model;
+package main.java.model;
 
-import enums.Genero;
+import main.java.enums.Genero;
 
 public class Audiobook extends Midia {
     public Audiobook(String titulo, String artista, Integer duracao, Genero genero) {
