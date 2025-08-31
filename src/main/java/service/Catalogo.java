@@ -12,7 +12,6 @@ import main.java.model.*;
 
 public class Catalogo {
 private ArrayList<Midia> midias = new ArrayList();
-private Sistema sistema;
 	
 	public Midia buscarMidia(Scanner scanner) throws ListaVaziaException, EntradaVaziaException, OpcaoInvalidaException {
 		Midia midia = null;
@@ -270,16 +269,6 @@ private Sistema sistema;
 			System.out.println(midia);
 		}
 	}
-
-	public void newUser(String nome, String email) throws EntradaVaziaException {
-		Sistema sistema = new Sistema();
-		sistema.cadastrarUsuario(nome, email);
-		System.out.println("Usuário cadastrado com sucesso: " + nome);
-	}
-
-	public void iniciar() {
-		Sistema sistema = new Sistema();
-		sistema.iniciar();
-	}
+	
 	
 }
