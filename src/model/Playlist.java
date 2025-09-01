@@ -1,8 +1,8 @@
-package main.java.model;
+package model;
 
-import main.java.exceptions.EntradaVaziaException;
-import main.java.exceptions.ListaVaziaException;
-import main.java.exceptions.OpcaoInvalidaException;
+import exceptions.EntradaVaziaException;
+import exceptions.ListaVaziaException;
+import exceptions.OpcaoInvalidaException;
 
 import java.util.ArrayList;
 import java.util.List;

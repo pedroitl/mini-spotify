@@ -1,6 +1,6 @@
-package main.java.model;
+package model;
 
-import main.java.enums.Genero;
+import enums.Genero;
 
 public class Podcast extends Midia {
     public Podcast(String titulo, String artista, Integer duracao, Genero genero) {

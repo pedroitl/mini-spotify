@@ -1,7 +1,7 @@
-package main.java.model;
+package model;
 
 
-import main.java.exceptions.EntradaVaziaException;
+import exceptions.EntradaVaziaException;
 
 import java.util.ArrayList;
 import java.util.List;
