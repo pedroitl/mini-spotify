@@ -62,38 +62,49 @@ private ArrayList<Midia> midias = new ArrayList();
 				case "ROCK":
 					if(midias.get(indice).getGenero() == Genero.ROCK) {
 						System.out.println(midias.get(indice));
+					}else {
+						System.out.println("Nenhuma midia cadastrada!");
 					}
 					break;
 				case "FORRO":
 					if(midias.get(indice).getGenero() == Genero.FORRO) {
 						System.out.println(midias.get(indice));
+					}else {
+						System.out.println("Nenhuma midia cadastrada!");
 					}
 					break;
 				case "POP":
 					if(midias.get(indice).getGenero() == Genero.POP) {
 						System.out.println(midias.get(indice));
+					}else {
+						System.out.println("Nenhuma midia cadastrada!");
 					}
 					break;
 				case "PAGODE":
 					if(midias.get(indice).getGenero() == Genero.PAGODE) {
 						System.out.println(midias.get(indice));
+					}else {
+						System.out.println("Nenhuma midia cadastrada!");
 					}
 					break;
 				case "FUNK":
 					if(midias.get(indice).getGenero() == Genero.FUNK) {
 						System.out.println(midias.get(indice));
+					}else {
+						System.out.println("Nenhuma midia cadastrada!");
 					}
 					break;
 				case "CLASSICA":
 					if(midias.get(indice).getGenero() == Genero.CLASSICA) {
 						System.out.println(midias.get(indice));
+					}else {
+						System.out.println("Nenhuma midia cadastrada!");
 					}
 					break;
 				default:
 					System.out.println("Genero não encontrado!");
 				return midias.get(indice);
 				}
-				System.out.println(genero);
 				
 			}
 			return null;
