@@ -24,7 +24,15 @@ public class Usuarios {
         this.playlists = new ArrayList<>();
     }
 
-    public void criarPlaylist(String nomePlaylist) throws EntradaVaziaException {
+    public List<Playlist> getPlaylists() {
+		return playlists;
+	}
+
+	public void setPlaylists(List<Playlist> playlists) {
+		this.playlists = playlists;
+	}
+
+	public void criarPlaylist(String nomePlaylist) throws EntradaVaziaException {
         if (nomePlaylist == null || nomePlaylist.isBlank()) {
             throw new EntradaVaziaException("Nome da playlist não pode ser nulo ou vazio");
         }
@@ -41,14 +49,21 @@ public class Usuarios {
         System.out.println("Playlist " + nomePlaylist + " Criada com sucesso!");
     }
 
-    public void visualizarPlaylist() {
+    public ArrayList visualizarPlaylist() {
+    	ArrayList<String> lista = new ArrayList();
+    	
         if (playlists.isEmpty()) {
             System.out.println("Nenhuma playlist encontrada!");
         } else {
             for (Playlist p : playlists) {
+            	lista.add(p.getNome());
                 System.out.println(p.getNome());
             }
+            
         }
+        if(lista.size()==0) {
+        	return lista;
+        }return null;
     }
 
     public boolean removerPlaylist(String nomePlaylist) {

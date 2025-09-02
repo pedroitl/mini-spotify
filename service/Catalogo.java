@@ -58,6 +58,7 @@ private ArrayList<Midia> midias = new ArrayList();
 				throw new EntradaVaziaException("A entrada não pode ser vazia!");
 			}
 			for (int indice = 0; indice<midias.size();indice++) {
+				ArrayList<Midia> lista = new ArrayList();
 				switch (genero) {
 				case "ROCK":
 					if(midias.get(indice).getGenero() == Genero.ROCK) {
