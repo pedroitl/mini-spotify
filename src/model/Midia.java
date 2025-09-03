@@ -33,7 +33,7 @@ public abstract class Midia {
 
     @Override
     public String toString() {
-        return titulo +" - " +artista+" | " + "\n" + duracao + " " + genero;
+        return titulo +" - " +artista+" | " + duracao + "min - " + genero;
     }
 
     public abstract void reproduzir();

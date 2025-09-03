@@ -288,8 +288,11 @@ private ArrayList<Midia> midias = new ArrayList();
 		midias.add(audiobook);
 	}
 	
-	public void exibirTodas() {
-		for ( Midia midia : midias) {
+	public void exibirTodas() throws ListaVaziaException {
+        if(midias.size()==0) {
+            throw new ListaVaziaException("Não há midias cadastradas!");
+        }
+        for ( Midia midia : midias) {
 			System.out.println(midia);
 		}
 	}
