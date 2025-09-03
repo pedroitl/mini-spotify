@@ -54,9 +54,10 @@ public class Playlist {
         System.out.println("\nPlaylist: " + nome + " | Dono: " + dono.getNome());
         if (midias.isEmpty()) {
             throw new ListaVaziaException("A playlist está vazia.");
-        }
-        for (Midia m : midias) {
-            System.out.println("- " + m);
+        }else {
+            for (Midia m : midias) {
+                System.out.println("- " + m);
+            }
         }
     }
 

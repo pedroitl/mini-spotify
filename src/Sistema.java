@@ -4,6 +4,7 @@ import model.Usuarios;
 import service.Catalogo;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -35,7 +36,7 @@ public class Sistema {
         return null;
     }
 
-    public void iniciar() throws EntradaVaziaException, OpcaoInvalidaException, ListaVaziaException {
+    public void iniciar() throws EntradaVaziaException, OpcaoInvalidaException, ListaVaziaException, InputMismatchException {
         Scanner sc = new Scanner(System.in);
         int opcao;
 
@@ -65,7 +66,6 @@ public class Sistema {
 
                 case 2:
                     catalogo.adicionarMidia(sc);
-                    System.out.println("Mídia adicionada ao catálogo!");
                     break;
 
                 case 3:
@@ -83,7 +83,7 @@ public class Sistema {
                 case 6:
                 	try {
                 	if (usuarios.size()==0) {
-                    	throw new ListaVaziaException("Não há usuários cadastrados");
+                    	throw new ListaVaziaException("Sem usuarios cadastrados para criar playlist!");
                     }
                     System.out.print("Nome do usuário: ");
                     String usuarioNome = sc.nextLine();

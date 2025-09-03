@@ -16,7 +16,7 @@ public class Usuarios {
             throw new EntradaVaziaException("Nome nao pode ser vazio ou nulo!");
         }
         if (email == null || email.isBlank()) {
-            throw new EntradaVaziaException("Nome nao pode ser vazio ou nulo!");
+            throw new EntradaVaziaException("Email nao pode ser vazio ou nulo!");
         }
 
         this.nome = nome;
@@ -46,7 +46,7 @@ public class Usuarios {
 
         Playlist nova = new Playlist(nomePlaylist, this);
         playlists.add(nova);
-        System.out.println("Playlist " + nomePlaylist + " Criada com sucesso!");
+        System.out.println("Playlist criada com sucesso!");
     }
 
     public ArrayList visualizarPlaylist() {
@@ -61,9 +61,7 @@ public class Usuarios {
             }
             
         }
-        if(lista.size()==0) {
-        	return lista;
-        }return null;
+        return null;
     }
 
     public boolean removerPlaylist(String nomePlaylist) {
@@ -74,7 +72,7 @@ public class Usuarios {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome){
         this.nome = nome;
     }
 
