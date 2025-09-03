@@ -37,9 +37,9 @@ public class Playlist {
         return new ArrayList<>(midias);
     }
 
-    public void adicionarMidia(Midia midia) {
-        midias.add(midia);
-        System.out.println("Mídia adicionada: " + midia.getTitulo());
+    public void adicionarMidia(ArrayList<Midia> mAdd) {
+        midias.addAll(mAdd);
+        System.out.println("Mídia adicionada!");
     }
 
     public void removerMidia(String titulo) throws OpcaoInvalidaException {
@@ -54,10 +54,9 @@ public class Playlist {
         System.out.println("\nPlaylist: " + nome + " | Dono: " + dono.getNome());
         if (midias.isEmpty()) {
             throw new ListaVaziaException("A playlist está vazia.");
-        }else {
-            for (Midia m : midias) {
-                System.out.println("- " + m);
-            }
+        }
+        for (Midia m : midias) {
+            System.out.println("- " + m);
         }
     }
 
